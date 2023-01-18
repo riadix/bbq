@@ -20,6 +20,10 @@ gem "turbo-rails", "~> 1.0.0"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+group :production do
+  gem 'pg'
+end
+
 group :development, :test do
   gem "sqlite3", "~> 1.4"
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
