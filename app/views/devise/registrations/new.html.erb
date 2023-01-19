@@ -6,34 +6,34 @@
   <div class="form-group row my-3">
     <div class="col-md-6">
       <%= f.label :name %>
-      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "Enter your name" %>
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control", placeholder: "Введите имя" %>
     </div>
   </div>
 
   <div class="form-group row my-3">
     <div class="col-md-6">
       <%= f.label :email %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Enter your email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Введите email" %>
     </div>
   </div>
 
   <div class="form-group row my-3">
     <div class="col-md-6">
       <%= f.label :password %>
-      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Choose a password" %>
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Пароль" %>
     </div>
   </div>
 
   <div class="form-group row my-3">
     <div class="col-md-6">
       <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Confirm password" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Подтверждение пароля" %>
     </div>
   </div>
 
   <div class="actions row my-3">
     <div class="col-md-3">
-      <%= f.submit "Sign up", data: {turbo: false}, class: "btn btn-primary" %>
+      <%= f.submit "Зарегистрироваться", data: {turbo: false}, class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>

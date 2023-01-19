@@ -6,13 +6,13 @@
   <div class="form-group row my-3">
     <div class="col-md-6">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Enter your email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Введите email" %>
     </div>
   </div>
 
   <div class="actions row my-3">
     <div class="col-md-3">
-      <%= f.submit "Send me reset password instructions", data: {turbo: false}, class: "btn btn-primary" %>
+      <%= f.submit "Отправить инструкцию, для восстановления", data: {turbo: false}, class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>
