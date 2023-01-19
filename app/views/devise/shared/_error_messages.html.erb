@@ -1,12 +1,13 @@
 <% if resource.errors.any? %>
   <div id="error_explanation">
-    <div class="col-md-3">
-      <% resource.errors.each do |error| %>
-        <div class="alert alert-danger alert-dismissible">
-          <%= error.full_message %>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      <% end %>
+    <div class="alert alert-danger alert-dismissible col-md-8">
+      <h4>В вашей форме <%= I18n.translate "plurals.errors", count: resource.errors.count %></h4>
+      <ul>
+        <% resource.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   </div>
 <% end %>

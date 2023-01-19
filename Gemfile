@@ -7,6 +7,8 @@ gem "rails", "~> 7.0.4"
 
 gem "cssbundling-rails"
 gem "devise"
+gem "devise-i18n"
+gem "rails-i18n"
 gem "jbuilder"
 gem "jsbundling-rails"
 gem "puma", "~> 5.0"
@@ -14,8 +16,6 @@ gem "sprockets-rails"
 gem "stimulus-rails"
 gem "sass-rails"
 gem "turbo-rails", "~> 1.0.0"
-
-# gem 'twitter-bootstrap-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
