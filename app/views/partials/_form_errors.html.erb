@@ -1,11 +1,12 @@
 <% if model.errors.any? %>
-  <div style="color: red">
-    <h2><%= pluralize(model.errors.count, "error") %> prohibited this <%= model.class %> from being saved:</h2>
-
-    <ul>
+  <div id="error_explanation">
+    <div class="col-md-6">
       <% model.errors.each do |error| %>
-        <li><%= error.full_message %></li>
+        <div class="alert alert-danger alert-dismissible">
+          <%= error.full_message %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
       <% end %>
-    </ul>
+    </div>
   </div>
 <% end %>
