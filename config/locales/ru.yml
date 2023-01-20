@@ -27,3 +27,29 @@ ru:
     one: '%{count} ошибка'
     few: '%{count} ошибки'
     many: '%{count} ошибок'
+  buttons:
+    go_back: 'Назад'
+    save: 'Сохранить'
+    delete: 'Удалить'
+    edit: 'Редактировать'
+    profile: 'Профиль'
+    show: 'Показать'
+  actions:
+    account:
+      show: 'Профиль'
+      edit: 'Редактировать'
+      password:
+        change: 'Изменить пароль'
+        new: 'Новый пароль'
+        old: 'Старый пароль'
+        confirm: 'Подтверждение пароля'
+    logout: 'Выйти'
+    login: 'Войти'
+    sign_up: 'Зарегистрироваться'
+  event:
+    plural: 'События'
+    new: 'Новое событие'
+    create: 'Создать событие'
+    edit: 'Редактировать событие'
+  const:
+    confirm: 'Вы уверены?'

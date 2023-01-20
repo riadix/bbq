@@ -1,6 +1,6 @@
-<h1>Редактирование события</h1>
+<h1><%= I18n.t('event.edit') %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Показать', @event %>
-<%= link_to 'Назад', events_path %>
+<%= link_to I18n.t('buttons.show'), @event %>
+<%= link_to I18n.t('buttons.go_back'), events_path %>

@@ -6,24 +6,24 @@
 
   <div class="form-group row my-3">
     <div class="col-md-6">
-      <%= f.label :password, "Новый пароль" %>
+      <%= f.label :password, I18n.t('actions.account.password.new') %>
       <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <em>(<%= @minimum_password_length %> букв минимум)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Пароль" %>
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: I18n.t('activerecord.attributes.user.password') %>
     </div>
   </div>
 
   <div class="form-group row my-3">
     <div class="col-md-6">
-      <%= f.label :password_confirmation, "Confirm new password" %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Подтверждение пароля" %>
+      <%= f.label :password_confirmation, I18n.t('actions.account.password.confirm') %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: I18n.t('actions.account.password.confirm') %>
     </div>
   </div>
 
   <div class="actions row my-3">
     <div class="col-md-3">
-      <%= f.submit "Изменить пароль", data: {turbo: false}, class: "btn btn-primary" %>
+      <%= f.submit I18n.t('actions.account.password.change'), data: {turbo: false}, class: "btn btn-primary" %>
     </div>
   </div>
 <% end %>

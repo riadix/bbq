@@ -1,7 +1,7 @@
-<div class="all-events-test"><h1>События</h1></div>
+<div class="all-events-test"><h1><%= I18n.t('event.plural') %></h1></div>
 
 <div class="buffer-both">
-  <%= link_to 'Создать событие', new_event_path, class: 'btn btn-success' %>
+  <%= link_to I18n.t('event.create'), new_event_path, class: 'btn btn-success' %>
 </div>
 
 <div class="row buffer-bottom">
