@@ -21,6 +21,14 @@ ru:
       destroyed: 'Событие успешно удалено'
     users:
       updated: 'Профиль успешно изменен'
+    comments:
+      created: 'Комментарий успешно создан'
+      destroyed: 'Комментарий успешно удален'
+      error: 'Ошибка c комментарием'
+    subscriptions:
+      created: 'Подписка успешно создана'
+      destroyed: 'Подписка успешно удалена'
+      error: 'Ошибка c подпиской'
   app:
     name: 'Шашлыки'
   errors:
