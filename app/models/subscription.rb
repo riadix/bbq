@@ -11,6 +11,13 @@ class Subscription < ApplicationRecord
   validates :user_email, uniqueness: {scope: :event_id}, unless: :present_user?
 
   validate :not_creator
+  validate :email_check
+
+  def email_check
+    if !user.present? && User.where(email: user_email).present?
+      errors.add('Ошибка', 'Пользователь с этой почтой существует')
+    end
+  end
 
   def not_creator
     if user == event.user
