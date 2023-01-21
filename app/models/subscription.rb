@@ -10,6 +10,14 @@ class Subscription < ApplicationRecord
   validates :user, uniqueness: {scope: :event_id}, if: :present_user?
   validates :user_email, uniqueness: {scope: :event_id}, unless: :present_user?
 
+  validate :not_creator
+
+  def not_creator
+    if user == event.user
+      errors.add('Ошибка', 'Вы создатель')
+    end
+  end
+
   def present_user?
     user.present?
   end
