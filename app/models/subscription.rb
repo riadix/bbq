@@ -2,27 +2,18 @@ class Subscription < ApplicationRecord
   belongs_to :event
   belongs_to :user, optional: true
 
-  validates :user_name,
-            presence: true, unless: :present_user?
-  validates :user_email,
-            presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/, unless: :present_user?
-
-  validates :user, uniqueness: {scope: :event_id}, if: :present_user?
-  validates :user_email, uniqueness: {scope: :event_id}, unless: :present_user?
-
-  validate :not_creator
-  validate :email_check
-
-  def email_check
-    if !user.present? && User.where(email: user_email).present?
-      errors.add('Ошибка', 'Пользователь с этой почтой существует')
-    end
+  with_options if: :present_user? do
+    validates :user, uniqueness: {scope: :event_id}
+    validate :validate_guest
   end
 
-  def not_creator
-    if user == event.user
-      errors.add('Ошибка', 'Вы создатель')
-    end
+  with_options unless: :present_user? do
+    validates :user_email, uniqueness: {scope: :event_id}
+    validates :user_name,
+              presence: true
+    validates :user_email,
+              presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
+    validate :validate_email_uniqueness
   end
 
   def present_user?
@@ -42,6 +33,22 @@ class Subscription < ApplicationRecord
       user.email
     else
       super
+    end
+  end
+
+  private
+
+  def validate_email_uniqueness
+    if User.where(email: user_email).present?
+      errors.add(I18n.t('error.subscription.attribute'),
+                 I18n.t('error.subscription.email_exists.message'))
+    end
+  end
+
+  def validate_guest
+    if user == event.user
+      errors.add(I18n.t('error.subscription.attribute'),
+                 I18n.t('error.subscription.is_creator.message'))
     end
   end
 end

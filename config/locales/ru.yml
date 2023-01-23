@@ -50,7 +50,8 @@ ru:
         change: 'Изменить пароль'
         new: 'Новый пароль'
         old: 'Старый пароль'
-        confirm: 'Подтверждение пароля'
+        forgot: 'Забыли пароль?'
+      delete: 'Удалить аккаунт'
     logout: 'Выйти'
     login: 'Войти'
     sign_up: 'Зарегистрироваться'
@@ -61,3 +62,10 @@ ru:
     edit: 'Редактировать событие'
   const:
     confirm: 'Вы уверены?'
+  error:
+    subscription:
+      attribute: 'Ошибка подписки'
+      is_creator:
+        message: 'Вы пользователь'
+      email_exists:
+        message: 'Пользователь с этой почтой уже существует'
