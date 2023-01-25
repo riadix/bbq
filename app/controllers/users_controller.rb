@@ -15,11 +15,9 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to user_url(@user), notice: I18n.t("controllers.users.updated") }
-        format.json { render :show, status: :ok, location: @user }
+        redirect_to user_url(@user), notice: I18n.t("controllers.users.updated")
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        render :edit
       end
     end
   end
@@ -32,6 +30,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(:name, :email, :avatar)
     end
 end

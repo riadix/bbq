@@ -3,17 +3,38 @@ ru:
     models:
       user: 'Пользователь'
       event: 'Событие'
+      subscription: 'Подписка'
+      comment: 'Комментарий'
+      photo: 'Фотография'
     attributes:
       user:
         email: 'Email'
         name: 'Имя'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
+        avatar: 'Аватарка'
       event:
         title: 'Название'
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+      comment:
+        user_name: 'Ваше имя'
+        body: 'Комментарий'
+      subscription:
+        user: 'Пользователь'
+        event: 'Событие'
+        user_name: 'Ваше имя'
+        user_email: 'Ваш email'
+      photo:
+        photo: 'Фотография'
+    errors:
+      models:
+        subscription:
+          attributes:
+            user:
+              must_not_be_creator: 'Вы создатель'
+              must_have_unique_email: 'Пользователь с этой почтой уже существует'
   controllers:
     events:
       created: 'Событие успешно создано'
@@ -29,6 +50,10 @@ ru:
       created: 'Подписка успешно создана'
       destroyed: 'Подписка успешно удалена'
       error: 'Ошибка c подпиской'
+    photos:
+      created: 'Фото добавлено'
+      destroyed: 'Фотография удалена'
+      error: 'Ошибка с фотографией'
   app:
     name: 'Шашлыки'
   errors:
@@ -42,6 +67,7 @@ ru:
     edit: 'Редактировать'
     profile: 'Профиль'
     show: 'Показать'
+    upload: 'Загрузить'
   actions:
     account:
       show: 'Профиль'
@@ -54,18 +80,22 @@ ru:
       delete: 'Удалить аккаунт'
     logout: 'Выйти'
     login: 'Войти'
+    login_with: 'Войти через'
     sign_up: 'Зарегистрироваться'
+    send_instructions: 'Отправить инструкцию, для восстановления'
+    resend:
+      unlock_instructions: 'Переотправить инструкциюю для разблокировки'
+      confirm_instructions: 'Переотправить инструкциюю для разблокировки'
+      confirm_instruction: 'Не получили инструкцию для подтверждения?'
+      instruction: 'Не получили инструкцию?'
   event:
     plural: 'События'
     new: 'Новое событие'
     create: 'Создать событие'
     edit: 'Редактировать событие'
+    subscribe: 'Подписаться'
+  user:
+    no_events: 'Пользователь не организовал ни одного события'
+    organized: 'Организовал:'
   const:
     confirm: 'Вы уверены?'
-  error:
-    subscription:
-      attribute: 'Ошибка подписки'
-      is_creator:
-        message: 'Вы пользователь'
-      email_exists:
-        message: 'Пользователь с этой почтой уже существует'

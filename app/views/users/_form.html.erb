@@ -12,6 +12,12 @@
     <%= f.text_field :email, class: 'form-control' %>
   </div>
 
+  <div class="form-group my-3">
+    <%= f.label :avatar %>
+    <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
+    <%= f.file_field :avatar, class: 'form-control' %>
+  </div>
+
   <div class="actions my-3">
     <%= f.submit I18n.t('buttons.save'), class: 'btn btn-primary' %>
     или <%= link_to I18n.t('buttons.go_back'), :back %>
